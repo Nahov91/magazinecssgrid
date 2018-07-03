@@ -39,7 +39,7 @@ img {
 }
 
 .toplayoutContainer {
-    width: 900px;
+    max-width: 900px;
     display: grid;
     grid-template-areas: 
         "topItem1 topItem2"
@@ -82,10 +82,10 @@ img {
 }
 
 .mainlayoutContainer {
-    width: 900px;
+    max-width: 900px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto auto 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(150px, content-fit));
     grid-gap: 10px;
     grid-template-areas: 
         "subArticle1 subArticle2 aside"
@@ -302,4 +302,24 @@ img {
     grid-auto-flow: column;
     grid-gap: 10px;
     list-style: none;
+}
+
+/******* TABLET LAYOUT *******/
+
+@media only screen and (max-width:760px) {
+    .toplayoutContainer {
+        grid-template-areas:
+        "topItem1 topItem1"
+        "topItem1 topItem1"
+        "topItem2 topItem3";
+        grid-template-columns: auto auto;
+    
+    }
+    .mainlayoutContainer {
+        grid-template-areas: 
+        "subArticle1 subArticle2"
+        "subArticle3 subArticle4"
+        "bigFolder bigFolder"
+        "aside aside"
+    }
 }
