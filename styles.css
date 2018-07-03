@@ -1,5 +1,6 @@
 
 /******* GENERAL STYLES ********/
+
 h1 {
     font-family: 'Open Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 1.5em;
@@ -20,6 +21,7 @@ img {
     object-fit: cover;
 }
 
+
 /********** PAGE CONTAINER ************/
 
 .pageContainer {
@@ -28,6 +30,38 @@ img {
     justify-self: stretch;
     margin: auto;
 }
+
+
+/**************** Header *****************/
+
+.header {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-flow: column;
+    grid-template-areas: "logo menu mobileMenu";
+    background: #2a2a2a;
+    color: whitesmoke;
+    padding: 0 15px;
+    text-transform: uppercase;
+    align-items: center;
+}
+
+.menu {
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 10px;
+    list-style: none;
+
+}
+
+.mobile-menu {
+    display: none;
+}
+
+.mobile-menu img {
+    max-width: 32px;
+}
+
 
 /********** TOP SECTION ***********/
 
@@ -74,6 +108,7 @@ img {
     grid-area: topItem3;
 }
 
+
 /********** MAIN SECTION *************/
 
 .main {
@@ -96,6 +131,7 @@ img {
 
 
 /******** MAIN SUBARTICLES *********/
+
 .subArticle1 {
     display: grid;
     grid-area: subArticle1;
@@ -125,6 +161,7 @@ img {
     color: whitesmoke;
     padding: 0 10px;
 }
+
 
 /************* ASIDE *************/
 
@@ -248,6 +285,7 @@ img {
     font-size: 0.8em;
 }
 
+
 /************* FOLDERS *************/
 
 .bigFolder {
@@ -260,13 +298,6 @@ img {
     align-content: start;
     background: rgb(58, 58, 58);
 }
-
-/* .folders {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    background: rgb(58, 58, 58);
-} */
 
 .event1 {
     grid-area: event1;
@@ -283,35 +314,6 @@ img {
     text-align: center;
 }
 
-/**************** Header *****************/
-
-.header {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-auto-flow: column;
-    grid-template-areas: "logo menu mobileMenu";
-    background: #2a2a2a;
-    color: whitesmoke;
-    padding: 0 15px;
-    text-transform: uppercase;
-    align-items: center;
-}
-
-.menu {
-    display: grid;
-    grid-auto-flow: column;
-    grid-gap: 10px;
-    list-style: none;
-
-}
-
-.mobile-menu {
-    display: none;
-}
-
-.mobile-menu img {
-    max-width: 32px;
-}
 
 /******* TABLET LAYOUT *******/
 
@@ -329,9 +331,13 @@ img {
         "subArticle1 subArticle2"
         "subArticle3 subArticle4"
         "bigFolder bigFolder"
-        "aside aside"
+        "aside aside";
     }
 }
+
+
+/********** MOBILE LAYOUT *********/
+
 @media only screen and (max-width:414px) {
     .menu {
         display: none;
@@ -356,9 +362,9 @@ img {
         max-height: 40px;
         grid-area: mobileMenu;
     }
-/* 
+
     .header {
         grid-template-areas:
         "logo mobileMenu";
-    } */
+    }
 }
